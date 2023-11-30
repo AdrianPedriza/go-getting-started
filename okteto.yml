@@ -4,7 +4,16 @@ build:
     context: .
 
 deploy:
+  - echo Hello world!  > external.md
   - kubectl apply -f k8s.yml
+
+external:
+  readme:
+    icon: okteto
+    notes: external.md
+    endpoints:
+    - name: readme
+      url: https://test.com
 
 dev:
   hello-world:
